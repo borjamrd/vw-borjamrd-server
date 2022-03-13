@@ -13,9 +13,10 @@ https://desarrolloweb.com/articulos/git-clone-clonar-repositorio.html#:~:text=Pr
 Debes clonar el respositiorio en la carpeta desde la cual quieras levantar el servidor, por ejemplo: 
 /Escritorio
 Para ello
-
-`git clone git@github.com:borjamrd/testvwborjaclientserver.git`
-`cd testvwborjaclientserver`
+``
+git clone git@github.com:borjamrd/testvwborjaclientserver.git
+cd testvwborjaclientserver
+``
 
 ### instalación dependencias
 
@@ -25,12 +26,15 @@ A continuación deberás instalar las dependencias del package.json. Para ello
 
 Ahora puedes, o bien levantar el servidor con los datos que tiene por defecto data.json, o bien escrapear de nuevo la página de coches.
 Para NO escrapear de nuevo
-
-`npm run start`
+`
+npm run start
+`
 
 Para escrapear de nuevo
-`node indexData.js`
-`npm run start`
+``
+node indexData.js
+npm run start
+``
 
 
 Revisa que el contenido se muestra correctamente en 
