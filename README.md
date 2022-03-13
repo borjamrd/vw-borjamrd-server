@@ -1,6 +1,14 @@
 # testvwborjaserver
 
+### fork del repositorio
+
+Debes hacer fork de este repositorio
+
+https://desarrolloweb.com/articulos/git-clone-clonar-repositorio.html#:~:text=Primero%20tienes%20que%20crear%20un,que%20t%C3%BA%20quieras%20con%20%C3%A9l.
+
 ### clonar el repositorio
+
+
 
 Debes clonar el respositiorio en la carpeta desde la cual quieras levantar el servidor, por ejemplo: 
 /Escritorio
