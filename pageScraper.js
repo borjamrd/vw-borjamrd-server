@@ -11,6 +11,8 @@ const scraperObject = {
         let scrapedData = [];
 
         // Wait for the required DOM to be rendered
+
+
         async function scrapeCurrentPage(){
             await page.waitForSelector('.dwa-ui-header__inner');
             // Get the link to all the required books
@@ -62,28 +64,30 @@ const scraperObject = {
             for(link in urls){
                 let currentPageData = await pagePromise(urls[link]);
                 scrapedData.push(currentPageData);
-                console.log(currentPageData);
+                
 		}
         let nextButtonExist = false;
         try{
-            const nextButton = await page.$eval('id_pbth_showmore', a => a.textContent);
+            const nextButtonExist = await page.$eval('#id_pbth_showmore', a => a.textContent);
             nextButtonExist = true;
         }
         catch(err){
             nextButtonExist = false;
         }
         if(nextButtonExist){
-            await page.click('id_pbth_showmore > a');	
+            await page.click('#id_pbth_showmore');	
             return scrapeCurrentPage(); // Call this function recursively
         }
         await page.close();
         return scrapedData;
     }
     let data = await scrapeCurrentPage();
-    console.log(data);
+    console.log(typeof(data));
+
     return data;
 
 	}
+
 }
 
 module.exports = scraperObject;
