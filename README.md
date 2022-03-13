@@ -23,14 +23,14 @@ A continuación deberás instalar las dependencias del package.json. Para ello
 
 `npm install`
 
-Ahora puedes, o bien levantar el servidor con los datos que tiene por defecto data.json, o bien escrapear de nuevo la página de coches
+Ahora puedes, o bien levantar el servidor con los datos que tiene por defecto data.json, o bien escrapear de nuevo la página de coches.
 Para NO escrapear de nuevo
 
 `npm run start`
 
 Para escrapear de nuevo
-`node indexData.js
-`npm run start``
+`node indexData.js`
+`npm run start`
 
 
 Revisa que el contenido se muestra correctamente en 
