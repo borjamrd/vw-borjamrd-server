@@ -1,12 +1,15 @@
 # testvwborjaserver
 
-<h2>Pasos previos</h2>
+### clonar el repositorio
 
-Debes clonar el respositiorio en la carpeta desde la cual quieras levantar el servidor, por ejemplo: Escritorio
+Debes clonar el respositiorio en la carpeta desde la cual quieras levantar el servidor, por ejemplo: 
+/Escritorio
 Para ello
 
-`git clone git@github.com:borjamrd/testvwborjaclientserver.git
-cd testvwborjaclientserver`
+`git clone git@github.com:borjamrd/testvwborjaclientserver.git`
+`cd testvwborjaclientserver`
+
+### instalación dependencias
 
 A continuación deberás instalar las dependencias del package.json. Para ello
 
