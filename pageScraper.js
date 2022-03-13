@@ -1,3 +1,7 @@
+
+var uniqid = require('uniqid'); 
+
+
 const scraperObject = {
 	url: 'https://www.dasweltauto.es/esp/',
 	async scraper(browser){
@@ -22,17 +26,11 @@ const scraperObject = {
                 let newPage = await browser.newPage();
                 await newPage.goto(link);
 
-                //No consigo acceder a la imagen a través del DOM
+                let idUnique = uniqid()
 
-                
-               /*  dataObj['carImage'] = await newPage.$eval('.showGalleryXL picture source', image => {
-                    let trueimage = image[9].getAttribute("data-srcset") 
-                    for (i=0;i<image.length;i++) {
-                        console.log(image[i].getAttribute("data-srcset"))
-                        console.log(trueimage)
-                        return trueimage
-                    }
-                     */
+                dataObj['carID'] = await idUnique
+                dataObj['carImage'] = await newPage.$eval('#gallery > div.swiper-slide.swiper-slide-active > a > picture > img', image => image.src)
+                   
                 dataObj['carNameParams'] = await newPage.$eval('.file-ttl> h1', text => {
                 text = text.textContent.replace(/(\r\n\t|\n|\r|\t|\s)/gm, "");
                 
@@ -53,6 +51,11 @@ const scraperObject = {
                     return text;
                     
                 });
+                dataObj['carData1'] = await newPage.$eval('#ancla-generales > ul:nth-child(2) > li:nth-child(2) > span', text => text.textContent)
+                dataObj['carData2'] = await newPage.$eval('#ancla-generales > ul:nth-child(2) > li:nth-child(3) > span', text => text.textContent)
+                dataObj['carData3'] = await newPage.$eval('#ancla-generales > ul:nth-child(2) > li:nth-child(4) > span', text => text.textContent)
+                dataObj['carData4'] = await newPage.$eval('#ancla-generales > ul:nth-child(2) > li:nth-child(5) > span', text => text.textContent)
+                dataObj['carData5'] = await newPage.$eval('#ancla-generales > ul:nth-child(2) > li:nth-child(6) > span', text => text.textContent)
                 resolve(dataObj);
                 await newPage.close();
             });
