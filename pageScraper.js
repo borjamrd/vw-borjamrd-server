@@ -9,10 +9,7 @@ const scraperObject = {
 		console.log(`Navigating to ${this.url}...`);
 		await page.goto(this.url);
         let scrapedData = [];
-
         // Wait for the required DOM to be rendered
-
-
         async function scrapeCurrentPage(){
             await page.waitForSelector('.dwa-ui-header__inner');
             // Get the link to all the required books
